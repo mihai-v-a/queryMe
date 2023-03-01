@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\query.me.efcore.database\query.me.efcore.database.csproj" />
     <ProjectReference Include="..\database\database.csproj" />
+    <ProjectReference Include="..\domain\domain.csproj" />
   </ItemGroup>
 
 </Project>

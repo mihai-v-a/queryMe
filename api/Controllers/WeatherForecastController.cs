@@ -1,6 +1,4 @@
-using database;
 using Microsoft.AspNetCore.Mvc;
-using query.me.efcore.database;
 
 namespace api.Controllers;
 
@@ -9,9 +7,9 @@ namespace api.Controllers;
 public class WeatherForecastController : ControllerBase
 {
     private readonly ILogger<WeatherForecastController> _logger;
-    private readonly GetEntitiesQuery<WeatherForecast, ApplicationDbContext> _getEntitiesQuery;
+    private readonly IGetEntitiesQuery<WeatherForecast> _getEntitiesQuery;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger, GetEntitiesQuery<WeatherForecast, ApplicationDbContext> getEntitiesQuery)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IGetEntitiesQuery<WeatherForecast> getEntitiesQuery)
     {
         _logger = logger;
         _getEntitiesQuery = getEntitiesQuery;

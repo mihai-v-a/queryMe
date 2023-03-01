@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace database;
 public class ApplicationDbContext : DbContext
@@ -12,4 +13,6 @@ public class ApplicationDbContext : DbContext
     {
         optionsBuilder.UseInMemoryDatabase("WeatherForecast");
     }
+
+    public DbSet<WeatherForecast> Forecast;
 }

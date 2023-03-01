@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace query.me.efcore.database
 {
-    public class GetEntitiesQuery<T, TContext> : BaseQuery<IEnumerable<T>, Func<T, bool>, TContext> where T : class where TContext : DbContext
+    public class GetEntitiesQuery<T, TContext> :
+        BaseQuery<IEnumerable<T>, Func<T, bool>, TContext>,
+        IGetEntitiesQuery<T> where T : class where TContext : DbContext
     {
         public GetEntitiesQuery(IDbContextFactory<TContext> dbContextFactory) : base(dbContextFactory)
         {
